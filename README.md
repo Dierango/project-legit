@@ -1,5 +1,5 @@
 Project Legit: Blockchain-Powered Product Authentication
-&lt;img alt="Project Legit Logo" src="https://img.shields.io/badge/Project-Legit-28a745?style=for-the-badge">
+&lt;img alt="Project Legit Logo" src="https://i.imgur.com/ieipB6g.png">
 
 Fighting Counterfeit Products with Blockchain Technology
 
