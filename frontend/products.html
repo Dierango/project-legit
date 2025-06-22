@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Project Legit - Authentic Products</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--
+
+TemplateMo 546 Sixteen Clothing
+
+https://templatemo.com/tm-546-sixteen-clothing
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <style>
+      .legit-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-weight: bold;
+        z-index: 10;
+      }
+      .suspicious-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-weight: bold;
+        z-index: 10;
+      }
+      .verify-product-container {
+        margin: 15px 0;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+      }
+      .product-item {
+        position: relative;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><h2>Project <em>Legit</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item active">
+                <a class="nav-link" href="products.html">Our Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>Verified Authentic Products</h4>
+              <h2>Project Legit Marketplace</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verification Banner -->
+    <div class="container mt-4 mb-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-info">
+            <h4>Product Verification System</h4>
+            <p>All products on our marketplace can be verified for authenticity using blockchain technology. Enter the product ID below to check if a product is genuine.</p>
+            <div class="verify-product-container">
+              <div class="input-group">
+                <input type="text" id="main-product-id-input" class="form-control" placeholder="Enter Product ID (e.g., NIKE-AIR-123456)">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="main-verify-product-btn">Verify Authenticity</button>
+                </div>
+              </div>
+              <div id="main-verification-result" class="mt-3" style="display: none;">
+                <div class="alert" role="alert"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <ul>
+                  <li class="active" data-filter="*">All Products</li>
+                  <li data-filter=".des">Featured</li>
+                  <li data-filter=".dev">Flash Deals</li>
+                  <li data-filter=".gra">Last Minute</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="filters-content">
+                <div class="row grid">
+                    <div class="col-lg-4 col-md-4 all des">
+                      <div class="product-item">
+                        <div class="legit-badge">LEGIT VERIFIED</div>
+                        <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Nike Air Jordan</h4></a>
+                          <h6>$199.99</h6>
+                          <p>Authentic Nike Air Jordan sneakers with blockchain verification. Product ID: NIKE-AIR-123456</p>
+                          <div class="verify-product-container">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control product-id-input" placeholder="NIKE-AIR-123456" value="NIKE-AIR-123456" readonly>
+                              <div class="input-group-append">
+                                <button class="btn btn-primary verify-product-btn" type="button" data-product-id="NIKE-AIR-123456">Verify</button>
+                              </div>
+                            </div>
+                            <div class="verification-result" style="display: none;">
+                              <div class="alert" role="alert"></div>
+                            </div>
+                          </div>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (12)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 all dev">
+                      <div class="product-item">
+                        <div class="suspicious-badge">SUSPICIOUS</div>
+                        <a href="#"><img src="assets/images/product_02.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Adidas Ultra Boost</h4></a>
+                          <h6>$89.75</h6>
+                          <p>Adidas Ultra Boost running shoes. Product ID: ADIDAS-BOOST-789012</p>
+                          <div class="verify-product-container">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control product-id-input" placeholder="ADIDAS-BOOST-789012" value="ADIDAS-BOOST-789012" readonly>
+                              <div class="input-group-append">
+                                <button class="btn btn-primary verify-product-btn" type="button" data-product-id="ADIDAS-BOOST-789012">Verify</button>
+                              </div>
+                            </div>
+                            <div class="verification-result" style="display: none;">
+                              <div class="alert" role="alert"></div>
+                            </div>
+                          </div>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (24)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 all gra">
+                      <div class="product-item">
+                        <div class="legit-badge">LEGIT VERIFIED</div>
+                        <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Louis Vuitton Bag</h4></a>
+                          <h6>$1,250.00</h6>
+                          <p>Authentic Louis Vuitton handbag with blockchain verification. Product ID: LV-BAG-345678</p>
+                          <div class="verify-product-container">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control product-id-input" placeholder="LV-BAG-345678" value="LV-BAG-345678" readonly>
+                              <div class="input-group-append">
+                                <button class="btn btn-primary verify-product-btn" type="button" data-product-id="LV-BAG-345678">Verify</button>
+                              </div>
+                            </div>
+                            <div class="verification-result" style="display: none;">
+                              <div class="alert" role="alert"></div>
+                            </div>
+                          </div>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (36)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 all gra">
+                      <div class="product-item">
+                        <a href="#"><img src="assets/images/product_04.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Apple Watch Series 7</h4></a>
+                          <h6>$399.00</h6>
+                          <p>Apple Watch Series 7 with cellular connectivity. Product ID: APPLE-WATCH-456789</p>
+                          <div class="verify-product-container">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control product-id-input" placeholder="APPLE-WATCH-456789" value="APPLE-WATCH-456789" readonly>
+                              <div class="input-group-append">
+                                <button class="btn btn-primary verify-product-btn" type="button" data-product-id="APPLE-WATCH-456789">Verify</button>
+                              </div>
+                            </div>
+                            <div class="verification-result" style="display: none;">
+                              <div class="alert" role="alert"></div>
+                            </div>
+                          </div>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (48)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 all dev">
+                      <div class="product-item">
+                        <div class="legit-badge">LEGIT VERIFIED</div>
+                        <a href="#"><img src="assets/images/product_05.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Gucci Sunglasses</h4></a>
+                          <h6>$299.99</h6>
+                          <p>Authentic Gucci sunglasses with blockchain verification. Product ID: GUCCI-SUN-567890</p>
+                          <div class="verify-product-container">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control product-id-input" placeholder="GUCCI-SUN-567890" value="GUCCI-SUN-567890" readonly>
+                              <div class="input-group-append">
+                                <button class="btn btn-primary verify-product-btn" type="button" data-product-id="GUCCI-SUN-567890">Verify</button>
+                              </div>
+                            </div>
+                            <div class="verification-result" style="display: none;">
+                              <div class="alert" role="alert"></div>
+                            </div>
+                          </div>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (60)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 all des">
+                      <div class="product-item">
+                        <div class="suspicious-badge">SUSPICIOUS</div>
+                        <a href="#"><img src="assets/images/product_06.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Rolex Submariner</h4></a>
+                          <h6>$4,999.00</h6>
+                          <p>Rolex Submariner watch. Product ID: ROLEX-SUB-678901</p>
+                          <div class="verify-product-container">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control product-id-input" placeholder="ROLEX-SUB-678901" value="ROLEX-SUB-678901" readonly>
+                              <div class="input-group-append">
+                                <button class="btn btn-primary verify-product-btn" type="button" data-product-id="ROLEX-SUB-678901">Verify</button>
+                              </div>
+                            </div>
+                            <div class="verification-result" style="display: none;">
+                              <div class="alert" role="alert"></div>
+                            </div>
+                          </div>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (72)</span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <ul class="pages">
+              <li><a href="#">1</a></li>
+              <li class="active"><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <p>Copyright &copy; 2023 Project Legit - 
+            
+            Powered by <a rel="nofollow noopener" href="#">Stellar/Soroban Blockchain</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+    <!-- Product Verification Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add click event for the main verification button
+        const mainVerifyButton = document.getElementById('main-verify-product-btn');
+        if (mainVerifyButton) {
+          mainVerifyButton.addEventListener('click', function() {
+            const productIdInput = document.getElementById('main-product-id-input');
+            const verificationResult = document.getElementById('main-verification-result');
+            const alertDiv = verificationResult.querySelector('.alert');
+            
+            verifyProduct(productIdInput.value, verificationResult, alertDiv);
+          });
+        }
+        
+        // Add click events for individual product verify buttons
+        const verifyButtons = document.querySelectorAll('.verify-product-btn');
+        verifyButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            const container = this.closest('.verify-product-container');
+            const resultDiv = container.querySelector('.verification-result');
+            const alertDiv = resultDiv.querySelector('.alert');
+            
+            verifyProduct(productId, resultDiv, alertDiv);
+          });
+        });
+        
+        // Product verification function
+        function verifyProduct(productId, resultDiv, alertDiv) {
+          if (!productId.trim()) {
+            showResult('Please enter a Product ID', 'warning', resultDiv, alertDiv);
+            return;
+          }
+          
+          // Show loading state
+          showResult('Verifying product...', 'info', resultDiv, alertDiv);
+          
+          // Simulate verification with the backend
+          setTimeout(() => {
+            // This is a mock implementation for the demo
+            // In a real application, this would make an API call to the backend
+            
+            const verifiedProducts = ['NIKE-AIR-123456', 'LV-BAG-345678', 'GUCCI-SUN-567890'];
+            const suspiciousProducts = ['ADIDAS-BOOST-789012', 'ROLEX-SUB-678901'];
+            
+            if (verifiedProducts.includes(productId)) {
+              showResult(
+                `✅ LEGIT VERIFIED<br>
+                Product ID: ${productId}<br>
+                Manufacturer: GD23ZFKW4QLVX3TMDXE...PSJ3<br>
+                Current Owner: Sixteen Clothing Store<br>
+                Registered: ${new Date().toLocaleString()}`,
+                'success', resultDiv, alertDiv
+              );
+            } else if (suspiciousProducts.includes(productId)) {
+              showResult(
+                `⚠️ SUSPICIOUS PRODUCT<br>
+                Product ID: ${productId}<br>
+                This product could not be verified in the blockchain registry.`,
+                'danger', resultDiv, alertDiv
+              );
+            } else {
+              // For demo purposes, we'll consider unknown products as not found
+              showResult('Product not found. This product may be counterfeit or not registered.', 'danger', resultDiv, alertDiv);
+            }
+          }, 1500); // Simulate network delay
+        }
+        
+        // Helper function to show results
+        function showResult(message, type, resultDiv, alertDiv) {
+          resultDiv.style.display = 'block';
+          alertDiv.className = `alert alert-${type}`;
+          alertDiv.innerHTML = message;
+        }
+      });
+    </script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+  </body>
+
+</html>
