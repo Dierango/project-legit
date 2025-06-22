@@ -52,6 +52,7 @@ Visit our marketplace at products.html.
 Select any product and click the "Verify" button.
 Observe the verification results directly from the blockchain.
 You can also try verifying your own product IDs using the search box at the top of the page!
+
 🔮 Future Roadmap
 We're continuously working to enhance Project Legit:
 
@@ -89,11 +90,12 @@ Increase consumer confidence in online and offline purchases.
 Protect brand value for legitimate manufacturers.
 Create a safer and more trustworthy marketplace for all participants.
 👨‍💻 About the Team
-Project Legit was developed by a team passionate about leveraging blockchain technology to solve real-world problems. Our combined expertise in blockchain, web development, and supply chain management has been instrumental in bringing this powerful solution to life.
+Project Legit was developed by a team (me, myself, and I) passionate about leveraging blockchain technology to solve real-world problems. Our combined expertise in blockchain, web development, and supply chain management has been instrumental in bringing this powerful solution to life.
 
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Project Legit: Verify. Trust. Purchase.
-
 Pitch Deck: https://docs.google.com/presentation/d/1l-rNz0walxtIg7ZWpNmgQBe2WAykQMCFZH6s-KjObsY/edit?usp=sharing
+
+This README is now well-structured and uses clear headings to improve readability. The logo is embedded directly, and the link to the pitch deck is at the bottom as a clear call to action. Let me know if you'd like any further adjustments!
