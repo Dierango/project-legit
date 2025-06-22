@@ -5,12 +5,24 @@ import json
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv # .env dosyasını yüklemek için
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # .env dosyasını yükle - Uygulama başladığında ortam değişkenleri buradan okunacak
 load_dotenv()
 
 # FastAPI uygulamasını başlat
 app = FastAPI()
+
+# CORS ayarları - İsteğe bağlı, frontend ile backend arasında iletişim için
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Geliştirme için, prodüksiyonda kısıtlayın
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],  # Hata mesajlarının frontend'e iletilmesini sağlar
+)
 
 # --- Model Tanımlamaları ---
 # Ürün kaydı için istek modeli
@@ -149,7 +161,7 @@ async def get_product_details_api(product_id: str):
     command = [
         "soroban", "contract", "invoke",
         "--id", CONTRACT_ID,
-        "--source", "alice", # Sadece okuma işlemi olduğu için herhangi bir hesaptan çağırabiliriz (örneğin alice)
+        "--source", "alice",
         "--network", "testnet",
         "--",
         "get_product_details",
@@ -158,22 +170,31 @@ async def get_product_details_api(product_id: str):
 
     try:
         output = run_soroban_command(command)
-        # Soroban CLI'dan gelen çıktının JSON olduğunu varsayıyoruz
+        
         # Output bir string olarak geliyor, onu JSON'a parse etmemiz gerekiyor.
-        # CLI çıktısı bazen ek metin (örn. INFO logları) içerebilir, bu yüzden sadece JSON kısmını ayıklamamız gerekebilir.
         json_start = output.find('{')
         json_end = output.rfind('}') + 1
         
         if json_start != -1 and json_end != -1 and json_end > json_start:
             json_str = output[json_start:json_end]
-            product_data = json.loads(json_str)
-            return ProductDetails(**product_data)
+            try:
+                product_data = json.loads(json_str)
+                return ProductDetails(**product_data)
+            except json.JSONDecodeError:
+                raise HTTPException(status_code=500, detail=f"Invalid JSON output from Soroban CLI: {output}")
         else:
-            raise HTTPException(status_code=500, detail=f"Failed to parse product details from CLI output. Raw output: {output}")
-    except HTTPException as e:
-        raise e
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=500, detail=f"Invalid JSON output from Soroban CLI: {output}")
+            # Ürün bulunamadı veya hata oluştu
+            if "ProductNotFound" in output or "Error(Contract, #101)" in output:
+                raise HTTPException(status_code=404, detail="Product not found")
+            else:
+                raise HTTPException(status_code=500, detail=f"Failed to parse product details from CLI output. Raw output: {output}")
+    except subprocess.CalledProcessError as e:
+        stderr = e.stderr.decode() if hasattr(e, 'stderr') and e.stderr else "Unknown error"
+        if "ProductNotFound" in stderr or "Error(Contract, #101)" in stderr:
+            raise HTTPException(status_code=404, detail="Product not found")
+        raise HTTPException(status_code=500, detail=f"Command error: {stderr}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {str(e)}")
 
 # --- Ek Bilgiler ---
 # Bu API'yi çalıştırmak için:
